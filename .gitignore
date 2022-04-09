@@ -6,3 +6,6 @@ __pycache__/
 page_objects/__pycache__/
 test_cases/__pycache__/
 *.pyc
+
+# ignore screenshots
+screen_shots/
