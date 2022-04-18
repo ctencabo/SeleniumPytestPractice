@@ -5,12 +5,6 @@
         -- xpath (Relative xpath recommended)
         -- id
         -- css-selectors and many others
-
-    The action methods perform the actions on the page like;
-        -- clicking
-        -- verifying if elements are enabled and displayed
-        -- Sending keys
-        -- Selecting elements
 """
 class LandingPageElements:
 

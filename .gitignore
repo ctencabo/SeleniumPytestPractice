@@ -9,3 +9,6 @@ test_cases/__pycache__/
 
 # ignore screenshots
 screen_shots/
+
+# ignore logs
+logs/
