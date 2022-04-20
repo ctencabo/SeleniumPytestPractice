@@ -1,11 +1,27 @@
 from selenium.webdriver.common.by import By
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
-from authentication_page_objects import AuthenticationPageElements
+from page_objects.authentication_page.authentication_page_objects import AuthenticationPageElements
 
 # Instantiating Authentication Page Elements
 authentication_page_elements = AuthenticationPageElements
 
 class AuthenticationPageActions:
+
+    # CHECK AND ASSERTIONS
+
+    def check_error_message(self, error_message, error_message_2):
+        wait = WebDriverWait(self.driver, 10)
+        element = wait.until(
+                EC.visibility_of_element_located((By.ID, authentication_page_elements.error_message_id))
+            )
+        self.driver.execute_script("arguments[0].scrollIntoView()", element)
+        message = element.text
+        try:
+            assert error_message == message
+        except:
+            assert error_message_2 == message
 
     # INPUT TEXT FIELDS ACTIONS
 

@@ -12,3 +12,5 @@ class LandingPageActions:
     def click_sign_in(self):
         element = self.driver.find_element(By.XPATH, landing_page_elements.nav_bar_sign_in_text_xpath)
         self.driver.execute_script("arguments[0].click()", element)
+
+    

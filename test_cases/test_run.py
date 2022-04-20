@@ -32,14 +32,24 @@ class TestAutomationPractice:
         try:
             logger.info("*********CLICKING SIGN IN BUTTON************")
             landing_page_actions.click_sign_in(self)
+            time.sleep(3)
             page_title = self.driver.title
             if page_title == auth_page_title:
-                auth_page_actions.input_sign_up_email(test_data.new_email)
-                auth_page_actions.click_create_account()
+                # SIGN UP WITH GIVEN CREDITS
+
+                logger.info("*********ENTERING EMAIL****************")
+                auth_page_actions.input_sign_up_email(self, test_data.new_email)
+                auth_page_actions.click_create_account(self)
+
+                # UNSUCCESSFUL FLOW
+
+                logger.info("*********UNSUCCESSFUL SIGN UP FLOW****************")
+                auth_page_actions.check_error_message(self, test_data.error_message,test_data.error_message_2)
             else:
                 # raise exception to force to go to the except field
-                raise Exception("did not redirect")
-        except:
+                raise Exception("*******USER WAS NOT REDIRECTED TO THE SIGN UP PAGE*******")
+        except Exception as e:
+            logger.info(e)
             self.driver.save_screenshot("./screen_shots/test_sign_up.png")
             raise ValueError
         finally:
