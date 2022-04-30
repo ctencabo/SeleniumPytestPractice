@@ -1,6 +1,6 @@
 from selenium.webdriver.common.by import By
 
-from authentication_page_objects import AuthenticationPageElements
+from .authentication_page_objects import AuthenticationPageElements
 
 # Instantiating Authentication Page Elements
 authentication_page_elements = AuthenticationPageElements

@@ -34,8 +34,8 @@ class TestAutomationPractice:
             landing_page_actions.click_sign_in(self)
             page_title = self.driver.title
             if page_title == auth_page_title:
-                auth_page_actions.input_sign_up_email(test_data.new_email)
-                auth_page_actions.click_create_account()
+                auth_page_actions.input_sign_up_email(self, test_data.new_email)
+                auth_page_actions.click_create_account(self)
             else:
                 # raise exception to force to go to the except field
                 raise Exception("did not redirect")
