@@ -13,12 +13,13 @@
 
 import pytest
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 
 @pytest.fixture()
 def setup():
     """This method runs before every test method."""
-    driver = webdriver.Chrome(ChromeDriverManager().install())
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()))
     driver.implicitly_wait(25)
     driver.maximize_window()
 
