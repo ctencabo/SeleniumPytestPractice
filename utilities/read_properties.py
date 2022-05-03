@@ -12,6 +12,14 @@ class ReadConfig:
     information from the configuration file"""
 
     @staticmethod
+    def get_landing_page_title():
+        "This method retrieves the landing page title from config file"
+        landing_page_title = config.get(
+            'Page titles', 'landing_page_title'
+        )
+        return landing_page_title
+
+    @staticmethod
     def get_authentication_page_title():
         "This method retrieves the authentication page title from config file"
         auth_page_title = config.get(

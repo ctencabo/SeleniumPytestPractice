@@ -71,8 +71,10 @@ class QuickViewElements:
     plus_btn_xpath = "//a[contains(@class,'product_quantity_up')]"
     color_selected_xpath = "//ul[@id='color_to_pick_list']" \
         "/li[@class='selected']"
-    color_unselected_xpath = "//ul[@id='color_to_pick_list']" \
+    color_unselected_next_xpath = "//ul[@id='color_to_pick_list']" \
         "/li[@class='selected']/following-sibling::li[position()=1]"
+    color_unselected_prev_xpath = "//ul[@id='color_to_pick_list']" \
+        "/li[@class='selected']/preceding-sibling::li[position()=1]"
     add_to_cart_btn_xpath = "//button[@name='Submit'][@class='exclusive']"
     add_to_wishlist_id = "wishlist_button"
 
@@ -92,3 +94,16 @@ class QuickViewElements:
     img_preview_id = "bigpic"
     img_list_id = "thumbs_list_frame"
 
+class SuccessModalElements:
+    """Elements found inside the modal when successfully added to cart"""
+
+    # Texts
+    success_header_xpath = "//div[contains(@class,'layer_cart_product')]/h2"
+    product_name_id = "layer_cart_product_title"
+    product_attributes_id = "layer_cart_product_attributes"
+    quantity_label_xpath = "//div[@class='layer_cart_product_info']" \
+        "//strong[normalize-space()='Quantity']"
+    total_label_xpath = "//div[@class='layer_cart_product_info']" \
+        "//strong[normalize-space()='Total']"
+
+    # Buttons
