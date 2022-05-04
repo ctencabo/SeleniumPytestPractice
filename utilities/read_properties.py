@@ -26,3 +26,11 @@ class ReadConfig:
             'Page titles', 'auth_page_title'
         )
         return auth_page_title
+
+    @staticmethod
+    def get_my_account_page_title():
+        "This method retrieves the my account page title from config file"
+        my_account_page_title = config.get(
+            'Page titles', 'my_account_page_title'
+        )
+        return my_account_page_title
